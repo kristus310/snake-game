@@ -1,7 +1,6 @@
 # Snake Game
 
-A classic Snake game implementation in **C** using **SDL3**, featuring retro-style graphics and smooth gameplay.
-
+A classic Snake game coded in **C** using **SDL3**, featuring **retro-style/user-responsive** graphics and **smooth** gameplay.
 ## Features
 
 - **Classic Snake Gameplay**: Control a growing snake to eat apples and avoid collisions
