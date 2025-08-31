@@ -5,7 +5,7 @@ A classic Snake game implementation in **C** using **SDL3**, featuring retro-sty
 ## Features
 
 - **Classic Snake Gameplay**: Control a growing snake to eat apples and avoid collisions
-- **Super responsive graphics**: Works on every screen, from the smallest to the biggest
+- **Super responsive graphics**: Works on every screen, it calculates every object's size based on the user's screen size
 - **Retro Graphics**: 640x480 resolution with a tiled, retro-inspired visual style
 - **Smooth Controls**: WASD or arrow key movement with collision prevention
 
