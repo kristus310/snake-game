@@ -2,26 +2,29 @@ cmake_minimum_required(VERSION 4.0)
 project(snake C)
 
 set(CMAKE_C_STANDARD 11)
+set(CMAKE_C_STANDARD_REQUIRED ON)
 
-set(SDL3_PATH "D:/Libraries/SDL3/x86_64-w64-mingw32")
-include_directories(${SDL3_PATH}/include)
-link_directories(${SDL3_PATH}/lib)
+# Works with vcpkg (Windows) or system packages (Linux/macOS)
+find_package(SDL3 REQUIRED CONFIG COMPONENTS SDL3)
+find_package(SDL3_ttf REQUIRED CONFIG)
 
-set(SDL3_TTF_PATH "D:/Libraries/SDL3_ttf/x86_64-w64-mingw32")
-include_directories(${SDL3_TTF_PATH}/include)
-link_directories(${SDL3_TTF_PATH}/lib)
-
-add_executable(snake src/main.c
+set(SOURCES
+        src/main.c
         src/game.c
-        src/game.h
         src/snake.c
-        src/snake.h
         src/input.c
-        src/input.h
         src/apple.c
-        src/apple.h
         src/text.c
+)
+set(HEADERS
+        src/game.h
+        src/snake.h
+        src/input.h
+        src/apple.h
         src/text.h
 )
 
-target_link_libraries(snake SDL3 SDL3_ttf)
+add_executable(snake ${SOURCES} ${HEADERS})
+
+target_include_directories(snake PRIVATE src)
+target_link_libraries(snake PRIVATE SDL3::SDL3 SDL3_ttf::SDL3_ttf)

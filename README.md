@@ -55,4 +55,4 @@ sudo apt-get install libsdl3-dev libsdl3-ttf-dev
 brew install sdl3 sdl3_ttf
 
 # Windows
-# Download SDL3 and SDL3_ttf development libraries from libsdl.org
+# Download SDL3 and SDL3_ttf development libraries from libsdl.org or through vcpkg package manager
